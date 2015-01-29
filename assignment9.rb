@@ -24,4 +24,4 @@ p string.match(/(?<=artificial )foot/)
 
 # Match the last sits in a phrase using this phrase:
 string = "I saw Susie sitting in a shoe shine shop. Where she sits she shines, and where she shines she sits."
-p string.match(/sits(?=.)/)
+p string.match(/(?<=she shines she )sits/)
