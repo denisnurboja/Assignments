@@ -17,7 +17,10 @@ p "There once was a man who had a sister, his name was Mr. Fister. Mr. Fister's 
 
 # Match the word foot but not football in this phrase:
 string = "He played football despite having an artificial foot."
-p string.match(/foot(?!ball)/)
+p string.match(/(?<=artificial )foot/)
+# Matches the word foot in football, but leaves out the ball.
+# Commented out because not sure if this is what you're looking for.
+# p string.match(/foot(?!ball)/)
 
 # Match the last sits in a phrase using this phrase:
 string = "I saw Susie sitting in a shoe shine shop. Where she sits she shines, and where she shines she sits."
