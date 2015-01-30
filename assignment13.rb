@@ -17,6 +17,6 @@ loop do
     puts 'Your guess is too low. Guess higher please.'
   else
     puts "Finally! It only took you #{count} guesses."
-    exit
+    break
   end
 end
