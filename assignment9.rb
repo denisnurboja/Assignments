@@ -1,5 +1,5 @@
 # Write a Ruby script to take the string "Hello World" and split it on
-#    whitespace. Show two ways to do this.
+#   whitespace. Show two ways to do this.
 
 p 'Hello World'.split(/ /)
 p 'Hello World'.split
