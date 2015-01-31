@@ -6,7 +6,6 @@ questions.each do |question|
   response = gets.chomp
   answers.push("#{response}")
 end
-summary = []
 puts 'Summary of our very quick Q&A:'
 puts questions[0] + ' = ' + answers[0]
 puts questions[1] + ' = ' + answers[1].capitalize
