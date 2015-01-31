@@ -1,6 +1,6 @@
 # Assignment 12
-answers = []
 questions = ['How old are you?', 'What is your name?', 'Where are you from?']
+answers = []
 questions.each do |question|
   puts question
   response = gets.chomp
