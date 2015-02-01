@@ -1,5 +1,5 @@
 # Prompt user to enter any text they want.
-puts "Please enter anything you want."
+puts 'Please enter anything you want.'
 # Set string equal to gets.chomp and convert it to a string.
 string = gets.chomp.to_s
 # Set weird_string to equal the user inputed string with removed whitespace.
