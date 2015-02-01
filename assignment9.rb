@@ -32,19 +32,11 @@ p string.scan(/(?=sh)/).count
 
 # In the same phrase above, how many times does 'sh' occur
 #   when followed by an 'o'? Show the code.
-string = 'There once was a man who had a sister, his name was Mr. Fister. Mr. '\
-         'Fister\'s sister sold sea shells by the sea shore. Mr. Fister '\
-         'didn\'t sell sea shells, he sold silk sheets. Mr. Fister told his '\
-         'sister that he sold six silk sheets to six shieks. The sister of '\
-         'Mr. Fister said I sold six shells to six shieks too!'
 p string.scan(/(?=sho)/).count
 
 # Match the word foot but not football in this phrase:
 string = 'He played football despite having an artificial foot.'
 p string.match(/(?<=artificial )foot/)
-# Matches the word foot in football, but leaves out the ball.
-# Commented out because not sure if this is what you're looking for.
-# p string.match(/foot(?!ball)/)
 
 # Match the last sits in a phrase using this phrase:
 string = 'I saw Susie sitting in a shoe shine shop.'\
