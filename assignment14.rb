@@ -23,7 +23,7 @@ class PigLatin
   end
   # Check to see if the first letter is a vowel
   def self.starts_with_vowel(first_letter)
-    # this should determine if it starts with a vowel
+    # This should determine if it starts with a vowel
     first_letter
   end
 end
