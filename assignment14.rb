@@ -2,7 +2,7 @@
 # If the first letter is a consonant, move it to the end and add "ay"
 
 class PigLatin
-  VOWELS =  %w(a e i o u)
+  VOWELS =  %w(a e i o u A E I O U)
 
   def self.pigatize(passed_text)
     # Declare the output string
@@ -24,7 +24,7 @@ class PigLatin
   # Check to see if the first letter is a vowel
   def self.starts_with_vowel(first_letter)
     # This should determine if it starts with a vowel
-    first_letter
+    VOWELS.include?(first_letter)
   end
 end
 puts 'Please enter a word and I will translate it into Pig Latin. Ippyyay!'
