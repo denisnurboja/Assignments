@@ -1,5 +1,7 @@
 # Assignment 15
 
+# Refer to assignment 12 and 17 for similar layout and comments.
+# Create an array of questions from external .txt file of strings.
 questions = File.readlines('assignment15.txt').each(&:chomp!)
 answers = []
 questions.each do |question|

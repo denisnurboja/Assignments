@@ -1,13 +1,11 @@
-# Create a guessing game
-# The user must guess the number chosen by the app
-# Provide feedback to the user as to if their guess
-#   is lower or higher than the number
-# Count the number of guesses and output at the end
+# Assignment 13
 
+# Randomly generate a number and set it to the variable answer.
 answer = rand(1..100)
+# Start the count at zero
 count = 0
 puts 'Guess a number randomly choosen this app, ranging from 1 to 100.'
-# Using a loop do conditional to reprompt user to input until guess == answer
+# Using a loop do conditional to reprompt user to input until guess == answer.
 loop do
   guess = gets.chomp.to_i
   count += 1
@@ -17,6 +15,8 @@ loop do
     puts 'Your guess is too low. Guess higher please.'
   else
     puts "Finally! It only took you #{count} guesses."
+    # Use break, exit aborts the entire app. So, if you had any other code to
+    #   run after the loop, it wouldn't work.
     break
   end
 end

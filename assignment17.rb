@@ -1,9 +1,11 @@
 # Assignment 17
 
+# Require JSON to parse data in Ruby.
 require 'json'
-
+# Read external JSON file and set it to the variable 'file'.
 file = File.read('assignment17.json')
-
+# Parse the 'questions' object inside of the JSON 'file'; leaving out the
+#   'questions' object will print all 3 questions and error out.
 questions = JSON.parse(file)['questions']
 
 answers = []
