@@ -1,4 +1,5 @@
 # Assignment 12
+
 questions = ['How old are you?', 'What is your name?', 'Where are you from?']
 answers = []
 questions.each do |question|
@@ -7,6 +8,9 @@ questions.each do |question|
   answers.push(response)
 end
 puts 'Summary of our very quick Q&A:'
-puts questions[0] + ' = ' + answers[0]
-puts questions[1] + ' = ' + answers[1].capitalize
-puts questions[2] + ' = ' + answers[2].capitalize
+summary = Hash[*questions.zip(answers).flatten]
+
+summary.each do |thequestions, theanswers|
+  puts "The question was: #{thequestions}"
+  puts "- Your answer was: #{theanswers.capitalize}"
+end
