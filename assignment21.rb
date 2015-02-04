@@ -21,6 +21,12 @@ class Person
   end
 
   def findage(birthday)
+    calculate_age(birthday)
+  end
+
+  private
+
+  def calculate_age(birthday)
     bd = Date.parse(birthday)
     today = Date.current
     age = today.strftime('%Y').to_i - bd.strftime('%Y').to_i
