@@ -11,7 +11,11 @@ class Person
     @last_name = person_name[1]
   end
 
-  def age(birthday)
+  def bd(bdinput)
+    @birthday = Date.parse(bdinput)
+  end
+
+  def findage(birthday)
     bd = Date.parse(birthday)
     today = Date.current
     age = today.strftime('%Y').to_i - bd.strftime('%Y').to_i
@@ -21,3 +25,16 @@ class Person
     @age = age
   end
 end
+p1 = Person.new
+puts 'Hello user. What is your name?'
+input = gets.chomp
+p1.name(input)
+puts "Nice to meet you #{p1.first_name}"
+puts 'When is your birthday? *YYYY/MM/DD or YYYY-MM-DD*'
+bdinput = gets.chomp
+p1.bd(bdinput)
+p1.findage(bdinput)
+print 'Name: First: ', p1.first_name.capitalize, ' | Last: ', \
+      p1.last_name.capitalize, "\n"
+print 'You were born on ', p1.birthday.strftime('%A, %B %d, %Y, '), \
+      "which makes you #{p1.age} years old today.", "\n"
