@@ -43,15 +43,15 @@ loop do
   input = gets.chomp
   break if input == '\q'
   p.name(input)
-  puts "Nice to meet you #{p.first_name}"
-  puts 'When is your birthday? *YYYY/MM/DD or YYYY-MM-DD*'
+  print ' ', "\n", 'Nice to meet you ', p.first_name.capitalize, '.', "\n"
+  print 'When were you born? *YYYY/MM/DD or YYYY-MM-DD*', "\n"
   bdinput = gets.chomp
   p.bd(bdinput)
   p.findage(bdinput)
-  print 'Name: First: ', p.first_name.capitalize, ' | Last: ', \
+  print ' ', "\n", 'Name: First: ', p.first_name.capitalize, ' | Last: ', \
         p.last_name.capitalize, "\n"
   print 'You were born on ', p.birthday.strftime('%A, %B %d, %Y, '), \
         "which makes you #{p.age} years old today.", "\n"
-  print 'You are User#: ', Person.person_count, "\n"
+  print 'You are User#: ', Person.person_count, "\n", ' ', "\n"
   break if input == '\q'
 end
