@@ -36,12 +36,12 @@ loop do
   puts 'Hello user. What is your name?'
   input = gets.chomp
   break if input == '\q'
-  p1.name(input)
-  puts "Nice to meet you #{p1.first_name}"
+  p.name(input)
+  puts "Nice to meet you #{p.first_name}"
   puts 'When is your birthday? *YYYY/MM/DD or YYYY-MM-DD*'
   bdinput = gets.chomp
-  p1.bd(bdinput)
-  p1.findage(bdinput)
+  p.bd(bdinput)
+  p.findage(bdinput)
   print 'Name: First: ', p.first_name.capitalize, ' | Last: ', \
         p.last_name.capitalize, "\n"
   print 'You were born on ', p.birthday.strftime('%A, %B %d, %Y, '), \
