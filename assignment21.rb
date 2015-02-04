@@ -4,6 +4,11 @@ class Person
   require 'Date'
   require 'active_support'
   require 'active_support/all'
+  @@person_count = 0
+
+  def self.person_count
+    @@person_count += 1
+  end
 
   def name(input)
     person_name = input.split
@@ -25,16 +30,22 @@ class Person
     @age = age
   end
 end
-p1 = Person.new
-puts 'Hello user. What is your name?'
-input = gets.chomp
-p1.name(input)
-puts "Nice to meet you #{p1.first_name}"
-puts 'When is your birthday? *YYYY/MM/DD or YYYY-MM-DD*'
-bdinput = gets.chomp
-p1.bd(bdinput)
-p1.findage(bdinput)
-print 'Name: First: ', p1.first_name.capitalize, ' | Last: ', \
-      p1.last_name.capitalize, "\n"
-print 'You were born on ', p1.birthday.strftime('%A, %B %d, %Y, '), \
-      "which makes you #{p1.age} years old today.", "\n"
+
+loop do
+  p = Person.new
+  puts 'Hello user. What is your name?'
+  input = gets.chomp
+  break if input == '\q'
+  p1.name(input)
+  puts "Nice to meet you #{p1.first_name}"
+  puts 'When is your birthday? *YYYY/MM/DD or YYYY-MM-DD*'
+  bdinput = gets.chomp
+  p1.bd(bdinput)
+  p1.findage(bdinput)
+  print 'Name: First: ', p.first_name.capitalize, ' | Last: ', \
+        p.last_name.capitalize, "\n"
+  print 'You were born on ', p.birthday.strftime('%A, %B %d, %Y, '), \
+        "which makes you #{p.age} years old today.", "\n"
+  print 'You are User#: ', Person.person_count, "\n"
+  break if input == '\q'
+end
