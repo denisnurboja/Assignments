@@ -25,8 +25,8 @@ class Person
   private
 
   def calculateAge
-    dob = Time.now - Time.parse(@birthdate)
-    age = dob.to_i / 60 / 60 / 24 / 365
+    dob = Date.today - Date.parse(@birthdate)
+    age = dob.to_i / 365
   end
 end
 
