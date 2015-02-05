@@ -6,15 +6,15 @@ require 'json'
 # Query the rotten tomatoes movie search link using API key.
 QUERY_URL = 'http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=za4jav7tmcasvd3r6qfeutat'
 # Create a condional named 'shutdown' for use in the loop to end the program.
-shutdown = 'this is the end'.downcase.gsub(' ', '%20')
+shutdown = 'this is the end'
 puts 'Please enter a movie you\'d like to know more about:'
 # Begin loop.
 loop do
   # Use .gsub to ensure movies > 1 word can be searched by adding %20.
-  movie = gets.chomp.downcase.gsub(' ', '%20')
+  movie = gets.chomp.downcase
   puts 'Searching...'
   # Set uri to = the QUERY_URL + rotten tomatoes search parameters + movie.
-  uri = URI(QUERY_URL + "&q=#{movie}")
+  uri = URI(QUERY_URL + "&q=#{movie.gsub(' ', '%20')}")
   # Performs GET request on URI and is set to 'raw_json'.
   raw_json = Net::HTTP.get(uri)
   # Parses the key 'movies' in the variable 'raw_json'.
