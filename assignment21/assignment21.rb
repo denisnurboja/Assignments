@@ -1,6 +1,6 @@
 # Assignment 21
 
-load 'person.rb'
+load 'Person.rb'
 
 loop do
   p = Person.new
