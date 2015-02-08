@@ -13,23 +13,24 @@ class Invoice
     @items = []
   end
 
-  # Create an instance method in Invoice that will calculate a total of all it's
-  #   invoice items.
-  # Use reject or select methods in order to remove any InvoiceItem objects
-  #   that have a zero quantity.
-  def total_items
-    total = @items.reject { |i| i == 0 }
-    t = total.sum
+  def sub_total
+    @items.sum { |i| i.sale_price.to_f * i.quantity.to_i }
   end
-  # Not required, but creates a count to show how many invoice created.
+
+  def tax_percentage
+    @items.sum { |i|
+      i.sale_price.to_f * i.quantity.to_i * (i.tax_percentage.to_f / 100) }
+  end
+
+  def each_invoice
+    @items.each { |i| yield i }
+  end
+
+  def reject_zeros
+    @items.reject { |i| i.quantity.to_i == 0 }
+  end
+
   def self.count
     @@count += 1
   end
-  # Show a sub-total without the tax, then a line item for the tax, then the
-  #   total.
-  # def itemization
-    # subt = t[1] * t[2]
-    # tax = subt * t[3]
-    # tot = subt + tax
-  #end
 end
