@@ -6,11 +6,6 @@ class Company
     @employees = []
   end
 
-  #  Adds the passed employee to the company employee list
-  #   def hire_employee(employee)
-  #     payroll = @employee
-  #   end
-
   def employee_name
     @employees = name
   end
@@ -21,5 +16,9 @@ class Company
 
   def self.count
     @@count += 1
+  end
+
+  def fire_employee
+    @employees.delete_if == id
   end
 end
