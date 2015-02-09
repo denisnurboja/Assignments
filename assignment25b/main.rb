@@ -40,5 +40,6 @@ blog.posts.each do |p|
   print ' | Summary: ', p.summary, "\n"
   puts ' '
   print ' | Body: ', p.body, "\n"
+  puts ' '
   print ' | Word Count: ', p.word_count, "\n"
 end
