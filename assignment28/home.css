@@ -1,1 +1,39 @@
-placeholder for css
+body {
+  background-color: #FFFFFF;
+}
+h1 {
+  font-family: 'Oswald', sans-serif;
+  color: #1A1A1C;
+  text-align: center;
+}
+h2 {
+  font-family: 'Oswald', sans-serif;
+}
+h3 {
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+}
+h5 {
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+}
+p {
+  font-family: 'Open Sans', sans-serif;
+  color: #1A1A1C;
+  font-size: 18px;
+  max-width: 960px;
+}
+ul {
+  font-family: 'Open Sans', sans-serif;
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+img {
+  float: left;
+  padding: 0px 10px 10px 10px;
+}
+a {
+  font-family: 'Open Sans', sans-serif;
+  padding: 5px;
+}
