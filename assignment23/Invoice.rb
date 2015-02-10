@@ -32,7 +32,8 @@ class Invoice
 
   # Creates a randomly generated invoice id for tracking puposes.
   def invoice_id
-    @id = print '| Invoice #: ', 'INV' + rand(1..999_999).to_s + 'CE |', "\n"
+    @invoice_id = print '| Invoice #: ', 'INV' \
+                         + rand(1..999_999).to_s + 'CE |', "\n"
   end
 
   # Use reject method to remove invoice item 'quantity' if it is a 0 value.
