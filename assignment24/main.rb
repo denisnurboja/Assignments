@@ -28,7 +28,7 @@ loop do
   company.employees.push(employee)
 end
 
-# Out put a summary of the company and new hires.
+# Output a summary of the company and new hires.
 puts ' '
 puts '______________________________________________'
 puts '| Summary of the company and it\'s new hires: |'
@@ -55,7 +55,7 @@ loop do
       # Sets variable 'fired'.
       fired = gets.chomp
       break if fired.empty?
-      # Calls on Company class method with the 'fired' argument.
+      # Calls on fire method inside of Company class with the argument 'fired'.
       company.fire_employee(fired)
       puts ' '
       puts '______________________________________________'

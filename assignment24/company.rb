@@ -1,4 +1,5 @@
-# Set's the class of 'Company' with name, city, and employees (which is an []).
+# Set's the class of 'Company' with name, city, and employees (which is an [])
+#   attributes.
 
 class Company
   attr_accessor :name, :city, :employees
@@ -18,7 +19,7 @@ class Company
   # This is a lifesaver. Makes it easier to display the employee roster instead
   #   of having to type it each time in the 'main.rb'.
   def list_of_employees
-    @employees.each do|e|
+    @employees.each do |e|
       print '| Employee ID: ', e.employee_id, ' | Employee Name: ', e.name, \
             ' | Employee City: ', e.city, "\n"
     end
