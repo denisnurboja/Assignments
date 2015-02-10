@@ -1,63 +1,74 @@
-# Take the Employee and Company classes, and create functionality to allow the company to hire and fire an employee.
-# Create a Ruby app that will use those classes to do the following:
-
-# prompt the user to enter information for the company.
-
-# prompt the user to enter each employee. It will then "hire" each of them.
-# show a list of employees, with ids, then ask the user if they would like to fire an employee by entering that id.
-# fire the employee by id and show an updated list with that employee no longer in it.
-
-load 'employee.rb'
 load 'company.rb'
+load 'employee.rb'
 
-company = Company.new
+# Prompt the user. This creates a new company and company name.
 puts ' '
-puts 'Enter information about the company:', "\n"
-print 'Company Name: '
+puts 'Let\'s add a company and then hire and fire employees!'
+company = Company.new
+print 'What is the company name? '
 company.name = gets.chomp.split.map(&:capitalize).join(' ')
-print 'Company City: '
+print 'Where is the company? '
 company.city = gets.chomp.split.map(&:capitalize).join(' ')
+puts ' '
+
+# Create a new employee with an id number, name, and city inside of a loop.
 loop do
   employee = Employee.new
-  puts ' '
-  puts 'Add a new hire:', "\n"
-  print 'Employee Name: '
+  employee.employee_id = rand(1..999_999).to_s + 'RC' + rand(1..99).to_s
+  puts 'Hire a new employee:'
+  print 'Employee name? '
   employee.name = gets.chomp.split.map(&:capitalize).join(' ')
   break if employee.name.empty?
-  print 'Employee City: '
+  print 'Employee city? '
   employee.city = gets.chomp.split.map(&:capitalize).join(' ')
+  puts ' '
+  puts 'To continue, enter more hirees. To exit, hit the ENTER key.'
+  puts ' '
+  # Push the employee into the employees array inside of the Company class.
   company.employees.push(employee)
-  puts ' '
-  print 'To finalize adding an employee, please hit the ENTER key.' \
-        ' Otherwise, please add more hires.', "\n"
 end
-puts "\n| #{company.name} Employee Catalog:"
-company.employees.each do |e|
-  puts ' '
-  puts "| Employee ID #: #{Company.count}"
-  print '| Employee name: ', e.name, ' | City: ', e.city, "\n"
-end
+
+# Out put a summary of the company and new hires.
+puts ' '
+puts '______________________________________________'
+puts '| Summary of the company and it\'s new hires: |'
+puts '----------------------------------------------'
+puts ' '
+print ' Company Name: ', company.name, ' | Company City: ', company.city, "\n"
+puts ' '
+# Uses pre-formated employee list from the Company class to save tons of time.
+company.list_of_employees
+puts ' '
+
+# Initializes the fire method inside of a loop if 'x' is entered.
 loop do
   puts ' '
   print 'Press ENTER to exit the program or "X" to remove an employee: '
   response = gets.chomp.capitalize
   break if response.empty?
   if response == 'X'
+    # Initializ loop to fire employee after 'x' is entered.
     loop do
       puts ' '
       print 'Input employee ID number to fire. Otherwise, hit the ENTER key' \
       ' to go back one step. '
+      # Sets variable 'fired'.
       fired = gets.chomp
       break if fired.empty?
-      # removes employee from company employee array
-      company.fire_employee
-      # Displays updated directory
-      puts "\n| #{company.name} Employee Catalog:"
-      company.employees.each do |e|
-        puts ' '
-        puts "| Employee ID #: #{Company.count}"
-        print '| Employee name: ', e.name, ' | City: ', e.city, "\n"
-      end
+      # Calls on Company class method with the 'fired' argument.
+      company.fire_employee(fired)
+      puts ' '
+      puts '______________________________________________'
+      puts '| Updated Employee Roster:                   |'
+      puts '----------------------------------------------'
+      puts ' '
+      # Displays updated employee roster.
+      company.list_of_employees
     end
+  end
 end
-end
+
+# Ends the program with a short message.
+puts ' '
+puts 'You have exited the program. Have a nice day.'
+puts ' '

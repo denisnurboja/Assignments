@@ -1,24 +1,26 @@
+# Set's the class of 'Company' with name, city, and employees (which is an []).
+
 class Company
   attr_accessor :name, :city, :employees
-  @@count = 0
 
+  # Initalizes employees attribute to be an array.
   def initialize
     @employees = []
   end
 
-  def employee_name
-    @employees = name
+  # Creates the fire method by using 'delete_if' and the variable 'fired'.
+  # Create a block of 'f' and calls on '.employee_id' from the [] to compare
+  #   it againsts the gets.chomp from the 'main.rb' section.
+  def fire_employee(fired)
+    @employees.delete_if { |f| f.employee_id == fired }
   end
 
-  def employee_city
-    @employees = city
-  end
-
-  def self.count
-    @@count += 1
-  end
-
-  def fire_employee
-    @employees.delete_if == id
+  # This is a lifesaver. Makes it easier to display the employee roster instead
+  #   of having to type it each time in the 'main.rb'.
+  def list_of_employees
+    @employees.each do|e|
+      print '| Employee ID: ', e.employee_id, ' | Employee Name: ', e.name, \
+            ' | Employee City: ', e.city, "\n"
+    end
   end
 end
