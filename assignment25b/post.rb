@@ -3,6 +3,5 @@ class Post
 
   def initialize
     @name = name
-    @date_published = Date.today.strftime('%A, %B %d, %Y')
   end
 end
