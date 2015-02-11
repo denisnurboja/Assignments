@@ -23,9 +23,10 @@ class Invoice
     @items.each do |i|
       puts ' '
       puts "| Invoice Item #: #{Invoice.count}"
-      print '| Product: ', i.product_name, \
-            ' | Price: ', number_to_currency(i.sale_price), ' | Quantity: ',
+      print '| Product: ', i.product_name, "\n"
+      print '| Price: ', number_to_currency(i.sale_price), ' | Quantity: ', \
             i.quantity, ' | Tax: ', i.tax_percentage, '%', "\n"
+      print '| Category: ', i.category, "\n"
     end
   end
 

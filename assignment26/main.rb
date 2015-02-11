@@ -38,6 +38,7 @@ loop do
     if invitem.search_id.to_i  == i['itemId']
       invitem.product_name = i['name']
       invitem.sale_price = i['salePrice']
+      invitem.category = i['categoryPath']
     end
   end
 
