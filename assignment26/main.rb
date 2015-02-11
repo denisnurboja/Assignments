@@ -31,7 +31,7 @@ loop do
   invitem = InvoiceItem.new
   puts ' '
   puts ' '
-  print 'Add WalMart item by ID number to invoice or Hit ENTER exit. '
+  print 'Add WalMart item by ID number to invoice or Hit ENTER to exit. '
   invitem.search_id = gets.chomp
   break if invitem.search_id.empty?
   items.each do |i|
@@ -50,8 +50,8 @@ loop do
   invitem.tax_percentage = gets.chomp
   inv.items.push(invitem)
   puts ' '
-  print 'To finalize the invoice, please hit the ENTER key in the Product' \
-        ' field. Otherwise, please search for more items to invoice.'
+  print 'To finalize the invoice, please hit the ENTER key in the product' \
+        ' field. Otherwise, please search and add more items.'
   puts ' '
 end
 
