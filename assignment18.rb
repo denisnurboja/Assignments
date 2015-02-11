@@ -1,5 +1,3 @@
-# Assignment 18
-
 # Require net/http and json.
 require 'net/http'
 require 'json'
