@@ -1,3 +1,4 @@
+=begin
 require 'net/http'
 require 'json'
 
@@ -12,3 +13,4 @@ items = search_results['items']
 items.each do |item|
   puts "#{item['itemId']}, #{item['name']},#{item['salePrice']},"
 end
+=end
