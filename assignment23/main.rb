@@ -67,7 +67,7 @@ inv.invoice_id
 puts ' - - - - - - - - - - - -'
 
 # Displays items using pre-formatted method from the 'Invoice' class.
-inv.each_invoice
+inv.display
 
 # Calculate the sub-total and tax of the invoice items.
 sub_total = inv.sub_total

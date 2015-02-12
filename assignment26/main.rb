@@ -65,7 +65,7 @@ puts ' _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|'
 inv.invoice_id
 puts ' - - - - - - - - - - - -'
 
-inv.each_invoice
+inv.display
 
 sub_total = inv.sub_total
 tax = inv.tax_percentage

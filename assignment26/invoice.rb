@@ -19,7 +19,7 @@ class Invoice
   end
 
   # Split the invoice items up by 'i' variable. Pre-format for output on 'main'.
-  def each_invoice
+  def display
     @items.each do |i|
       puts ' '
       puts "| Invoice Item #: #{Invoice.count}"
