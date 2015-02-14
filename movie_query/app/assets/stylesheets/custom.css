@@ -1,0 +1,31 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans);
+.jumbotron {
+  background-color: #016b09;
+  color: #eee;
+  font-family: 'Montserrat', sans-serif;
+}
+.jumbotron .h1 {
+  color: #eee;
+}
+.jumbotron h1 small {
+  font-size: 22px;
+  color: #eee;
+}
+.navbar {
+  font-family: 'Montserrat', sans-serif;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+h4 {
+  font-family: 'Montserrat', sans-serif;
+}
+.progress-bar {
+  float: left;
+  height: 100%;
+  font-size: 12px;
+  line-height: 15px;
+  color: #eee;
+  text-align: right;
+  background-color: #016B09;
+}

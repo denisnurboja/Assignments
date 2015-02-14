@@ -1,3 +1,54 @@
-<h1>Search for a Movie</h1>
-<p>Movie: <%= @title %></p>
-<p>Synopsis: <%= @synopsis %></p>
+<nav class="navbar navbar-inverse">
+	<div class="container">
+		<div class="navbar-header">
+			<p class="navbar-brand">Muuvee /// <small>Dead. Simple. Movies.</small></p>
+		</div>
+		<form class="navbar-form navbar-right" role="search">
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Search coming soon..." disabled>
+			</div>
+			<button type="submit" class="btn btn-default" disabled>Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container">
+	<div class="jumbotron">
+		<h1><%= @title %>  <small>[ <%= @rating %> ]</small></h1>
+		<md><span class="glyphicon glyphicon-film" aria-hidden="true"></span></i> Theater Debut: <%= @theater.strftime("%B %-d, %Y") %> | <span class="glyphicon glyphicon-cd" aria-hidden="true"></span> DVD Released: <%= @dvd.strftime("%B %-d, %Y") %></md><br /><br />
+		<p class="lead"><%= truncate(@synopsis, length: 200, separator: ' ') %></p>
+		<% if @synopsis.empty? %>
+		<p class="lead">No synopsis available at this time.</p>
+		<% end %>
+	</div>
+	<div class="row marketing">
+		<div class="col-lg-6">
+			<p><%= image_tag @poster, class: "img-responsive" %></p>
+			<% if @poster.empty? %>
+			<p><%= image_tag url('/assets/angrypanda.png'), class: "img-responsive" %></p>
+			<% end %>
+		</div>
+		<div class="col-lg-6">
+			<h4>Year</h4>
+			<p><%= @year %></p>
+			<h4>Runtime</h4>
+			<p><%= @runtime %> mins.</p>
+			<h4>Critics Rating <small>(<%= @critics_r %>)</small></h4>
+			<p class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: <%= @critics %>%"><%= @critics %>%</p><br />
+			<h4>Audience Rating <small>(<%= @audience_r %>)</small></h4>
+			<p class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: <%= @audience %>%"><%= @audience %>%</p><br />
+			<h4>Synopsis</h4>
+			<p><%= @synopsis %></p>
+			<% if @synopsis.empty? %>
+			<p>No synopsis available at this time.</p>
+			<% end %>
+			<h4>Cast</h4>
+			<ul class="list-unstyled">
+				<% @cast.each do |cast| %>
+				<li><i class="fa fa-star"></i> <strong><%= cast["name"] %></strong> as <em><%= cast["characters"].join(" ") %></em></li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="panel-footer"><div class="container">Developed by <%= link_to 'Tony Gaeta', 'http://www.tonygaeta.com/' %> while attending <%= link_to 'The Iron Yard', 'http://www.theironyard.com/' %> academy in beautiful Downtown St. Pete.</div>
+</div>
