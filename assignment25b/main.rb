@@ -7,34 +7,28 @@ load 'post.rb'
 puts ' '
 puts 'Let\'s start a new blog post!'
 puts ' '
+blog = Blog.new
 print 'What is the name of this blog? '
-name = gets.chomp.split.map(&:capitalize).join(' ')
-if name.empty?
-  print 'Please enter the blog name before continuing. '
-  name = gets.chomp.split.map(&:capitalize).join(' ')
-end
+blog.name = gets.chomp.split.map(&:capitalize).join(' ')
 print 'Who is the author? '
-user_name = gets.chomp.split.map(&:capitalize).join(' ')
-if user_name.empty?
-  print 'Please enter the author\'s name before continuing. '
-  user_name = gets.chomp.split.map(&:capitalize).join(' ')
-end
-blog = Blog.new(name, user_name)
+blog.user_name = gets.chomp.split.map(&:capitalize).join(' ')
+
 # Loop posts inside of new blog.
 loop do
+  post = Post.new
   print 'Post Title: '
-  name = gets.chomp.split.map(&:capitalize).join(' ')
-  break if name.empty?
-  post = Post.new(name)
+  post.name = gets.chomp.split.map(&:capitalize).join(' ')
+  break if post.name.empty?
   print 'Date Published (MM/DD/YYYY): '
   post.date_published = gets.chomp
   print 'Please begin writing your masterpiece: '
   post.body = gets.chomp
+
   # Calculates the word count by calling split then counting the words in [].
-  post.word_count = body.split(' ').length
+  post.word_count = post.body.split(' ').length
 
   # Truncates the body using the slice method on the first 25 characters.
-  post.summary = body.slice(0, 25) + '...'
+  post.summary = post.body.slice(0, 25) + '...'
 
   # Injects the post into the posts [] inside of the class 'Blog'.
   blog.posts.push(post)
