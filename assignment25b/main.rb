@@ -7,22 +7,32 @@ load 'post.rb'
 puts ' '
 puts 'Let\'s start a new blog post!'
 puts ' '
-blog = Blog.new
 print 'What is the name of this blog? '
-blog.name = gets.chomp.split.map(&:capitalize).join(' ')
+name = gets.chomp.split.map(&:capitalize).join(' ')
+while name.empty?
+  print 'To continue, you must enter a blog name. Enter one now: '
+  name = gets.chomp.split.map(&:capitalize).join(' ')
+end
 print 'Who is the author? '
-blog.user_name = gets.chomp.split.map(&:capitalize).join(' ')
+user_name = gets.chomp.split.map(&:capitalize).join(' ')
+while user_name.empty?
+  print 'To continue, you must enter an author name. Enter one now: '
+  user_name = gets.chomp.split.map(&:capitalize).join(' ')
+end
+blog = Blog.new(name, user_name)
 
 # Loop posts inside of new blog.
 loop do
-  post = Post.new
   print 'Post Title: '
-  post.name = gets.chomp.split.map(&:capitalize).join(' ')
-  break if post.name.empty?
+  name = gets.chomp.split.map(&:capitalize).join(' ')
+  break if name.empty?
+  post = Post.new(name)
   print 'Date Published (MM/DD/YYYY): '
-  post.date_published = gets.chomp
+  date_published = gets.chomp
+  post.date_published = date_published
   print 'Please begin writing your masterpiece: '
-  post.body = gets.chomp
+  body = gets.chomp
+  post.body = body
 
   # Calculates the word count by calling split then counting the words in [].
   post.word_count = post.body.split(' ').length
