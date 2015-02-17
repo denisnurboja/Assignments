@@ -12,6 +12,7 @@ class MoviesController < ApplicationController
     @cast = []
 
     @title = movie['title']
+
     @synopsis = movie['synopsis']
     if @synopsis == nil
       @synopsis = 'No synopsis available at this time.'

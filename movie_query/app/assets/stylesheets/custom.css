@@ -1,10 +1,17 @@
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans|Amatic+SC:400,700|Lato:400,700);
 .jumbotron {
-  background-color: #016b09;
+  background-color: #016b1f;
   color: #eee;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
 }
-.jumbotron .h1 {
+.container .jumbotron {
+  border-radius: 0;
+}
+.jumbotron h1 {
+  font-weight: bold;
+}
+.jumbotron h3 small {
   color: #eee;
 }
 .jumbotron h1 small {
@@ -12,20 +19,62 @@
   color: #eee;
 }
 .navbar {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 body {
   font-family: 'Open Sans', sans-serif;
 }
+.container h2 {
+  font-family: 'Amatic SC', cursive;
+  font-size: 66px;
+  text-decoration: none;
+}
+.container h2 a:hover {
+  color: #B71414;
+  font-family: 'Amatic SC', cursive;
+  font-size: 66px;
+  text-decoration: none;
+}
+.container h2 a:hover {
+  color: #B71414;
+  font-family: 'Amatic SC', cursive;
+  font-size: 66px;
+  text-decoration: none;
+}
+.container h2 small {
+  color: #B71414;
+  font-family: 'Amatic SC', cursive;
+}
 h4 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Lato', sans-serif;
+  color: #016b1f;
+}
+h3 {
+  font-family: 'Lato', sans-serif;
+  color: #016b1f;
+  margin: 0;
+  padding-bottom: 10px;
 }
 .progress-bar {
   float: left;
   height: 100%;
   font-size: 12px;
-  line-height: 15px;
+  line-height: 2px;
   color: #eee;
   text-align: right;
-  background-color: #016B09;
+  background-color: #B71414;
+  padding-top: 10px;
+}
+.fa-star {
+  color: #B71414;
+}
+.col-lg-6 p {
+  padding-bottom: 10px;
+}
+.form-group {
+  padding-top: 40px;
+}
+a {
+  color: #B71414;
+  text-decoration: none;
 }
