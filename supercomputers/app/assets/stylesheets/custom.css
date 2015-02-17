@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto|Ubuntu);
+
 .footer {
   padding-top: 40px;
   padding-bottom: 40px;
@@ -8,11 +10,16 @@
 .jumbotron {
   text-align: center;
   background-color: transparent;
+  font-family: 'Ubuntu', sans-serif;
 }
 .jumbotron .btn {
   padding: 14px 24px;
   font-size: 21px;
   color: #fff;
+  background-color: #6E767A;
+}
+.col-lg-4 {
+  font-family: 'Roboto', sans-serif;
 }
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
