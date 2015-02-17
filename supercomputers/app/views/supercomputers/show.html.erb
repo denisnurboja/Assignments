@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Rank:</strong>
+  <%= @supercomputer.rank %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @supercomputer.name %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @supercomputer.city %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @supercomputer.country %>
+</p>
+
+<p>
+  <strong>Speed:</strong>
+  <%= @supercomputer.speed %>
+</p>
+
+<p>
+  <strong>Memory:</strong>
+  <%= @supercomputer.memory %>
+</p>
+
+<p>
+  <strong>Power:</strong>
+  <%= @supercomputer.power %>
+</p>
+
+<%= link_to 'Edit', edit_supercomputer_path(@supercomputer) %> |
+<%= link_to 'Back', supercomputers_path %>

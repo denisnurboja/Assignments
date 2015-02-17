@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Supercomputers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Name</th>
+      <th>City</th>
+      <th>Country</th>
+      <th>Speed</th>
+      <th>Memory</th>
+      <th>Power</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @supercomputers.each do |supercomputer| %>
+      <tr>
+        <td><%= supercomputer.rank %></td>
+        <td><%= supercomputer.name %></td>
+        <td><%= supercomputer.city %></td>
+        <td><%= supercomputer.country %></td>
+        <td><%= supercomputer.speed %></td>
+        <td><%= supercomputer.memory %></td>
+        <td><%= supercomputer.power %></td>
+        <td><%= link_to 'Show', supercomputer %></td>
+        <td><%= link_to 'Edit', edit_supercomputer_path(supercomputer) %></td>
+        <td><%= link_to 'Destroy', supercomputer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Supercomputer', new_supercomputer_path %>
