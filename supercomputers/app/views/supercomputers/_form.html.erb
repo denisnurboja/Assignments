@@ -29,7 +29,7 @@
   </div>
   <div class="field">
     <%= f.label :speed %><br>
-    <%= f.text_field :speed %>
+    <%= f.number_field :speed %>
   </div>
   <div class="field">
     <%= f.label :memory %><br>
@@ -37,8 +37,9 @@
   </div>
   <div class="field">
     <%= f.label :power %><br>
-    <%= f.text_field :power %>
+    <%= f.number_field :power %>
   </div>
+  <br />
   <div class="actions">
     <%= f.submit %>
   </div>
