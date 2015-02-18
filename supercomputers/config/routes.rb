@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :supercomputers
+  resources :supercomputers do
+    resources :applications
+  end
 
   root 'supercomputers#landing'
 

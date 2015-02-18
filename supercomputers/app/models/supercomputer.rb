@@ -15,4 +15,8 @@
 #
 
 class Supercomputer < ActiveRecord::Base
+  has_many :applications
+  validates :rank, presence: true
+  validates :name, presence: true
+  validates :speed, presence: true
 end

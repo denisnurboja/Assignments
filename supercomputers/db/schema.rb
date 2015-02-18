@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150217184422) do
+ActiveRecord::Schema.define(version: 20150218194301) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "applications", force: :cascade do |t|
+    t.string   "project"
+    t.integer  "supercomputer_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "applications", ["supercomputer_id"], name: "index_applications_on_supercomputer_id", using: :btree
 
   create_table "supercomputers", force: :cascade do |t|
     t.integer  "rank"
@@ -28,4 +37,5 @@ ActiveRecord::Schema.define(version: 20150217184422) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "applications", "supercomputers"
 end
