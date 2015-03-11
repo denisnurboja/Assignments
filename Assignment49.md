@@ -26,8 +26,6 @@ end
 ```
 - [ ] `bundle install` (`bi`)
 - [ ] modify database.yml to remove SQLite (located in config/database.yml)
-- [ ] `rake db:create`
-
 ```yml
 development:
   adapter: postgresql
@@ -39,6 +37,7 @@ test:
   database: railsapp_test
   host: localhost
 ```
+- [ ] `rake db:create`
 - [ ] Create Procfile in root directory and the following text to the file: _web: bundle exec thin start -p $PORT_
 
 ## Deploying to Heroku
