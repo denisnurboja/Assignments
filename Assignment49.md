@@ -17,7 +17,7 @@
 
 - [ ] remove SQLite from gemfile
 - [ ] add the following gems to gem file:
-```
+```ruby
 gem 'pg'
 gem 'thin'
 group :production do
