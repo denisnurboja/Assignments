@@ -5,8 +5,8 @@
 ## How to Version Control It and Push to GitHub
 - [ ] `cd appname`
 - [ ] `git init`
-- [ ] `git add .``
-- [ ] `git commit -am ‘First commit'``
+- [ ] `git add .`
+- [ ] `git commit -am ‘First commit'`
 - [ ] goto GitHub and create new repo
 - [ ] select public... do not initialize with a README
 - [ ] do not add gitignore file
