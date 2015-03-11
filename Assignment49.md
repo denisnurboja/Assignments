@@ -1,6 +1,6 @@
 # Checklist for Building an App and Deploying It
  ## How to Create a New Rails App
-- [ ]`rails new appname`
+- [ ] `rails new appname`
 
 ## How to Version Control It and Push to GitHub
 - [ ]`cd appname`
